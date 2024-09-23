@@ -15,16 +15,16 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.10
+        python-version: 3.10.14
 
     - name: Install dependencies
       run: |
         python3 -m pip install --upgrade pip
-        pip install -r backend/requirements.txt  # Updated path
+        pip install -r backend/requirements.txt  
 
     - name: Run tests
       run: |
-        python3 backend/manage.py test  # Ensure you use the correct path to manage.py
+        python3 backend/manage.py test  
 
     - name: Deploy to Google App Engine
       run: |
