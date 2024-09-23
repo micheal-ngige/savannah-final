@@ -1,5 +1,16 @@
-runtime: python3.10
+runtime: python310  
+
+instance_class: F2  
+
+entrypoint: gunicorn -b :$PORT customer_orders.wsgi  
+
+env_variables:
+  DJANGO_SETTINGS_MODULE: customer_orders.settings  
+  SECRET_KEY: ${SECRET_KEY}  
 
 handlers:
-- url: /.*
-  script: auto
+  - url: /static
+    static_dir: static/  
+
+  - url: /.*
+    script: auto  
