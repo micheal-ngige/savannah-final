@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'orders',
+
     'oauth2_provider',
     'django.contrib.sites',
     'allauth',
